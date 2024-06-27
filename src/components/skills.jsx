@@ -74,7 +74,7 @@ const Skills = () => {
             <img src={LinkedinLogo} alt="LinkedIn"/>
           </a>
           <WhatsappLink
-            href={`https://api.whatsapp.com/send?phone=12992189430&text=${encodeURIComponent("Olá, estou interessado no seu serviço de Desenvolvedor")}`}
+            href={`https://api.whatsapp.com/send?phone=12992189430&text=${encodeURIComponent("Olá, tudo bem? Encontrei seu portfólio online e fiquei interessado em saber mais sobre os seus serviços como Desenvolvedor Front-End. Podemos conversar?")}`}
             target="_blank"
             rel="noopener noreferrer"
           >

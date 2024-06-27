@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import lojaMks from "../assets/lojaMks.png";
 import cineflex from "../assets/cineflex.png";
+import ZapRecall from "../assets/zapRecall.png";
+
 import SeeMore from "./projects/seeMoure";
 
 const projects = [
@@ -16,9 +18,9 @@ const projects = [
     link: "https://cine-flex-rho.vercel.app/",
   },
   {
-    name: "Loja MKS",
-    image: lojaMks,
-    link: "https://loja-mks-psi.vercel.app/",
+    name: "Zap Recall",
+    image: ZapRecall,
+    link: "https://zap-recall-teal.vercel.app/",
   },
 ];
 

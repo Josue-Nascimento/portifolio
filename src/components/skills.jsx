@@ -111,12 +111,22 @@ const AlltheInformation = styled.div`
 `;
 
 const LogoSkills = styled.div`
+
   height: 300px;
   width: 300px;
   flex-wrap: wrap;
   display: flex;
   justify-content: space-around;
   margin-right: 20px;
+  @media (max-width: 667px) {
+   
+        width: 100%;
+        height: 50%;
+          display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
 `;
 
 const SkillItem = styled.div`
@@ -130,6 +140,9 @@ const SkillItem = styled.div`
   margin-right: 40px;
   transition: transform 0.3s, filter 0.3s;
   filter: grayscale(100%);
+  @media (max-width: 667px) {
+        width: 20%;
+    }
   
   &:hover {
     transform: scale(1.1);
@@ -140,6 +153,11 @@ const SkillItem = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 10px;
+    @media (max-width: 667px) {
+        width: 200%;
+        height: 60%;
+
+    }
   }
 `;
 
@@ -149,6 +167,10 @@ const TextContainer = styled.div`
   font-size: 16px;
   margin-left: 20px;
   max-width: 200px;
+  @media (max-width: 667px) {
+      font-size: 13px;
+
+    }
 `;
 
 const ContactInformation = styled.div`
@@ -158,9 +180,13 @@ const ContactInformation = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+ 
   
   p {
     color: white;
+    @media (max-width: 667px) {
+      font-size: 13px;
+    }
   }
 
   img {
@@ -168,6 +194,10 @@ const ContactInformation = styled.div`
     width: 50px;
     border-radius: 10px;
     margin-right: 5px;
+    @media (max-width: 667px) {
+      width: 30px;
+
+    }
   }
 `;
 
@@ -177,7 +207,11 @@ const WhatsappLink = styled.a`
     height: 50px;
     border-radius: 10px;
     cursor: pointer;
+    @media (max-width: 667px) {
+      width: 30px;
+      height: 30px;
 
+    }
   }
 
   &:hover {

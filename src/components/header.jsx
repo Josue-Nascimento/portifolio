@@ -1,18 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function Header() {
+const Header = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // Scroll suave para uma transição mais agradável
+      behavior: "smooth",
     });
   };
 
-  const scrollToAboutMe = () => {
-    const aboutMeSection = document.getElementById("about-me-section");
-    if (aboutMeSection) {
-      aboutMeSection.scrollIntoView({
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({
         behavior: "smooth",
       });
     }
@@ -33,13 +33,13 @@ export default function Header() {
       </Logos>
       <ButtonNavigation>
         <p onClick={scrollToTop}>Início</p>
-        <p onClick={scrollToAboutMe}>Sobre mim</p>
-        <p>Projetos</p>
-        <p>Habilidades</p>
+        <p onClick={() => scrollToSection("about-me-section")}>Sobre mim</p>
+        <p onClick={() => scrollToSection("projects-section")}>Projetos</p>
+        <p onClick={() => scrollToSection("skills-section")}>Habilidades</p>
       </ButtonNavigation>
     </ContainerHeader>
   );
-}
+};
 
 const ContainerHeader = styled.div`
   width: 100%;
@@ -49,12 +49,10 @@ const ContainerHeader = styled.div`
   justify-content: space-around;
   align-items: center;
   box-shadow: 0px 0.5px 0px #fffffffa;
-  backdrop-filter: blur(10px); /* Aplicando desfoque */
+  backdrop-filter: blur(10px);
   position: fixed;
-  @media (max-width: 667px) {
-    display: flex;
-    justify-content: space-around;
-  }
+  top: 0;
+  z-index: 1000; /* Garante que o cabeçalho fique acima do conteúdo */
 `;
 
 const Logos = styled.div`
@@ -82,12 +80,11 @@ const LogoItem = styled.p`
     width: 4%;
     height: 5px;
     font-size: 20px;
-  }
+  }  
 `;
 
 const ButtonNavigation = styled.div`
   display: flex;
-
   text-align: center;
   p {
     color: white;
@@ -96,9 +93,10 @@ const ButtonNavigation = styled.div`
   }
   @media (max-width: 667px) {
     width: 65%;
-
     p {
       font-size: 13px;
     }
   }
 `;
+
+export default Header;
